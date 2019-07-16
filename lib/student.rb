@@ -64,6 +64,13 @@ class Student
   
   def self.first_X_students_in_grade_10()
     sql = <<-SQL
+    SELECT number_students
+      FROM students 
+      WHERE grade = "10" 
+    SQL
+    
+    DB[:conn].execute(sql)
+  end
       
   def self.create_table
     sql = <<-SQL
